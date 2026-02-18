@@ -1,0 +1,104 @@
+{
+  "name": "🚨 | Centrale d'Erreurs | ⚠️",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e3bcdee9-5220-4345-98dd-c97ed9cc2ac5",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "chatId": "2097549087",
+        "text": "=⚠️ **Alerte Centrale d'Erreurs**\n\n📁 Workflow : {{ $json.workflow.name }}\n📉 **Nœud en panne** : {{ $json.execution.lastNodeExecuted }}\n❌ **Erreur** : {{ $json.execution.error.message }}\n🕒 **Heure** : {{ new Date().toLocaleString() }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "13e58228-f304-426b-86b7-0553ad789e76",
+      "name": "Send a text message",
+      "webhookId": "d23629d2-ca95-4c56-82fa-b3166a1b9099",
+      "credentials": {
+        "telegramApi": {
+          "id": "5gBNv9QfbBW6LMMq",
+          "name": "Telegram RedLymboBot"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "timeSavedPerExecution": 5
+  },
+  "versionId": "c23cefb4-41c9-4250-aa83-9a937ad44423",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "1dcc42e454aa093118e91da4deaae27d3b6558a12926bf822a9b740b6310fb2e"
+  },
+  "id": "FWwOm2VOPzP1m-52M3dOG",
+  "tags": [
+    {
+      "name": "Monitoring",
+      "id": "886xoSAwsuOSdPAv",
+      "updatedAt": "2026-02-18T15:18:44.779Z",
+      "createdAt": "2026-02-18T15:18:44.779Z"
+    },
+    {
+      "name": "Error Handling",
+      "id": "kPxeMOWymrVRN04c",
+      "updatedAt": "2026-02-18T15:19:08.388Z",
+      "createdAt": "2026-02-18T15:19:08.388Z"
+    },
+    {
+      "name": "Telegram",
+      "id": "NyaGCs5DkEDJ8uJe",
+      "updatedAt": "2026-02-18T15:19:18.028Z",
+      "createdAt": "2026-02-18T15:19:18.028Z"
+    },
+    {
+      "name": "Devops",
+      "id": "Rqqxvol6zHod9zxq",
+      "updatedAt": "2026-02-18T15:19:21.581Z",
+      "createdAt": "2026-02-18T15:19:21.581Z"
+    },
+    {
+      "name": "Production",
+      "id": "lqolFnxcytnbhUnc",
+      "updatedAt": "2026-02-18T15:19:34.471Z",
+      "createdAt": "2026-02-18T15:19:34.471Z"
+    },
+    {
+      "name": "Alerting",
+      "id": "etUnNDYdDXMzT1fg",
+      "updatedAt": "2026-02-18T15:19:40.505Z",
+      "createdAt": "2026-02-18T15:19:40.505Z"
+    }
+  ]
+}
